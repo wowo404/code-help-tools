@@ -9,6 +9,7 @@
         <module>generator-constants</module>
         <module>hibernate-javabean-generator</module>
         <module>mybatis-generator</module>
+        <module>original-generator</module>
     </modules>
 
     <properties>

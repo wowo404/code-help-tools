@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--generator.xml中各节点的详细解释https://gitee.com/free/Mybatis_Utils/blob/master/MybatisGeneator/MybatisGeneator.md-->
+	<context id="testTables" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!-- 通用mapper插件 -->
+        <!--<plugin type="tk.mybatis.mapper.generator.MapperPlugin">-->
+            <!--&lt;!&ndash; 此处的 MyMapper注意一定不能被扫描到&ndash;&gt;-->
+            <!--<property name="mappers" value="com.softwareloop.mybatis.generator.plugins.MyMapper"/>-->
+        <!--</plugin>-->
+		<plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin"/>
+		<!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Conditions" />
+		</plugin>-->
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://rm-uf606qe6pn3w0sde14o.mysql.rds.aliyuncs.com/dev_hf_qsq?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;tinyInt1isBit=false"
+						userId="dev_root_user" password="mp#U0dXnOQx%#">
+		</jdbcConnection>-->
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+						connectionURL="jdbc:mysql://rm-uf606qe6pn3w0sde14o.mysql.rds.aliyuncs.com/init-tnjc-db?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;tinyInt1isBit=false&amp;useSSL=false"
+						userId="dev_root_user" password="mp#U0dXnOQx%#">
+            <property name="useInformationSchema" value="true"/>
+            <!--当指定schema失效的时候，加此property-->
+            <property name="nullCatalogMeansCurrent" value="true" />
+		</jdbcConnection>
+		<!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+						<!--connectionURL="jdbc:mysql://47.96.77.229:3306/insurance?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;tinyInt1isBit=false"-->
+						<!--userId="insurance" password="insurance@supermarket">-->
+		<!--</jdbcConnection>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+                        <!--connectionURL="jdbc:mysql://rm-uf606qe6pn3w0sde14o.mysql.rds.aliyuncs.com:3306/sentry?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;tinyInt1isBit=false&amp;useSSL=false"-->
+                        <!--userId="dev_root_user" password="mp#U0dXnOQx%#">-->
+            <!--&lt;!&ndash;设置为 true 可以获取 tables 信息, 解决生成文件缺少 xxxByPrimaryKey 的问题 &ndash;&gt;-->
+            <!--<property name="useInformationSchema" value="true"/>-->
+        <!--</jdbcConnection>-->
+        <!-- java类型处理器
+        用于处理DB中的类型到Java中的类型，默认使用JavaTypeResolverDefaultImpl；
+        注意一点，默认会先尝试使用Integer，Long，Short等来对应DECIMAL和 NUMERIC数据类型；
+        -->
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+            <!--
+            true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型
+            false：默认,
+                scale>0;length>18：使用BigDecimal;
+                scale=0;length[10,18]：使用Long；
+                scale=0;length[5,9]：使用Integer；
+                scale=0;length<5：使用Short；
+         -->
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.jc.domain.certp2p"
+			targetProject="src/main/java">
+            <!--  for MyBatis3/MyBatis3Simple
+            自动为每一个生成的类创建一个构造方法，构造方法包含了所有的field；而不是使用setter；
+            -->
+            <property name="constructorBased" value="false"/>
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+            <!-- for MyBatis3 / MyBatis3Simple
+            是否创建一个不可变的类，如果为true，
+            那么MBG会创建一个没有setter方法的类，取而代之的是类似constructorBased的类
+            -->
+            <property name="immutable" value="false"/>
+            <!-- 设置一个根对象，
+            如果设置了这个根对象，那么生成的keyClass或者recordClass会继承这个类；在Table的rootClass属性中可以覆盖该选项
+            注意：如果在key class或者record class中有root class相同的属性，MBG就不会重新生成这些属性了，包括：
+                1，属性名相同，类型相同，有相同的getter/setter方法；
+            -->
+            <!--<property name="rootClass" value="com._520it.mybatis.domain.BaseDomain"/>-->
+		</javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="src/main/resources">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.jc.mapper.certp2p"
+			targetProject="src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 指定数据库表 -->
+        <table schema="init-tnjc-db" tableName="tn_certp2p_detail" domainObjectName="CertP2PDetail" enableCountByExample="true">
+            <generatedKey column="id" sqlStatement="Mysql" />
+            <!--<columnOverride column="response_json" javaType="java.lang.String" jdbcType="JSON"/>-->
+            <!--<domainObjectRenamingRule searchString="^Data" replaceString="" />-->
+        </table>
+
+	</context>
+</generatorConfiguration>

@@ -1,0 +1,216 @@
+        <table schema="insurance" tableName="t_product_second_classification" domainObjectName="ProductSecondClassification">
+			<!-- enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" -->
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+			<!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+		</table>
+        <table schema="insurance" tableName="t_product" domainObjectName="Product">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_account" domainObjectName="Account">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_activity_page" domainObjectName="ActivityPage">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_address" domainObjectName="Address">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_admin_permission" domainObjectName="AdminPermission">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_admin_role" domainObjectName="AdminRole">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_admin_role_permission" domainObjectName="AdminRolePermission">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_admin_user" domainObjectName="AdminUser">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_admin_user_role" domainObjectName="AdminUserRole">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_app_version" domainObjectName="AppVersion">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_area" domainObjectName="Area">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_carousel" domainObjectName="Carousel">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_claim" domainObjectName="Claim">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_commission_relation" domainObjectName="CommissionRelation">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_contacts" domainObjectName="Contacts">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_message" domainObjectName="Message">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_notice" domainObjectName="Notice">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_operate_log" domainObjectName="OperateLog">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_order" domainObjectName="Order">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_org_admin_relation" domainObjectName="OrgAdminRelation">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_organization" domainObjectName="Organization">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_partner" domainObjectName="Partner">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_partner_card" domainObjectName="PartnerCard">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_receive_address" domainObjectName="ReceiveAddress">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_settlement" domainObjectName="Settlement">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
+        <table schema="insurance" tableName="t_virtual_partner" domainObjectName="VirtualPartner">
+            <!-- enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false" -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--覆盖MBG默认的数据类型-->
+            <!--<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>-->
+        </table>
