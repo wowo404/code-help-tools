@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
+    <!--generator.xml中各节点的详细解释https://gitee.com/free/Mybatis_Utils/blob/master/MybatisGeneator/MybatisGeneator.md-->
 	<!-- 文档链接：http://blog.csdn.net/isea533/article/details/42102297 -->
 	<!-- 数据库驱动 -->
 	<!-- ojdbc6.jar已经直接放到项目中,无需指定了,同时mysql驱动包也一样,这里同样无需指定 -->
