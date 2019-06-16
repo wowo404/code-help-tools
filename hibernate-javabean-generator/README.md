@@ -1,0 +1,1 @@
+hibernate生成工具，使用的是eclipse或者idea插件
