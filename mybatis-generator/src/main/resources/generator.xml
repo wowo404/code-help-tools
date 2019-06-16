@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 文档链接：http://blog.csdn.net/isea533/article/details/42102297 -->
+	<!-- 数据库驱动 -->
+	<!-- ojdbc6.jar已经直接放到项目中,无需指定了,同时mysql驱动包也一样,这里同样无需指定 -->
+	<!-- <classPathEntry location="mysql-connector-java-5.1.9.jar"/> -->
+	<context id="myTables" targetRuntime="MyBatis3" defaultModelType="flat">
+		<!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<plugin type="org.mybatis.generator.LombokPlugin"/>
+		<commentGenerator type="org.mybatis.generator.MyCommentGenerator">
+			<!-- 使用自定义的注释类，这里不需要配置了 -->
+			<!-- <property name="suppressDate" value="false"/> -->
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<!-- <property name="suppressAllComments" value="false"/> -->
+		</commentGenerator>
+		<!--数据库链接URL，用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://106.12.36.176:3306/springboot?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;useSSL=false"
+			userId="springboot" password="baiduYUN@123">
+		</jdbcConnection>
+<!-- 		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@192.168.32.22:1521:orcl"
+			userId="sp_promotions" password="sp_promotions">
+		</jdbcConnection> -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 生成模型的包名和位置 -->
+		<javaModelGenerator targetPackage="com.zanfq.model.po"
+			targetProject="D:\work\workspace\mybatis-generator\src\main\java">
+			<!--true不生成包名false生成 -->
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="false" />
+			<!-- 生成的po会extend定义的rootClass -->
+			<!-- <property name="rootClass" value="com.seaway.common.promotion.vo.BaseModel"/> -->
+		</javaModelGenerator>
+		<!-- 生成映射文件的包名和位置 -->
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="D:\work\workspace\mybatis-generator\src\main\resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!--生成DAO的包名和位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.zanfq.dao.mapper" targetProject="D:\work\workspace\mybatis-generator\src\main\java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名 -->
+		<table schema="springboot" tableName="system_config" domainObjectName="SystemConfig">
+			<!-- enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" -->
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+			<!--WARN:mysql中的text或者blob字段类型，要这样配置，不然example中不会生成对应方法-->
+			<columnOverride column="value" javaType="String" jdbcType="VARCHAR"/>
+		</table>
+	</context>
+</generatorConfiguration>

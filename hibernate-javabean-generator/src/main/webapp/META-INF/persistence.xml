@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="hibernate-javabean-generator">
+		<class>com.seaway.mdl.TbForumBoard</class>
+		<class>com.seaway.mdl.ForumActivityApply</class>
+		<class>com.seaway.mdl.TbForumRcp</class>
+		<class>com.seaway.mdl.TbForumRcpReply</class>
+		<class>com.seaway.mdl.TbForumSensitiveWord</class>
+		<class>com.seaway.mdl.TbForumTopic</class>
+		<class>com.seaway.mdl.TbForumTopicAttention</class>
+		<class>com.seaway.mdl.TbForumTopicComment</class>
+		<class>com.seaway.mdl.TbForumTopicInform</class>
+	</persistence-unit>
+</persistence>
