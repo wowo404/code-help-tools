@@ -40,10 +40,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <!--配置mbg-->
             <!--此处应注意mybatis-generator-maven-plugin的版本-->
             <!--较低版本的依赖会导致xml中包含@mbg.generator注释的代码不会被覆盖，造成增量叠加问题-->
