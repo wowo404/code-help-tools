@@ -14,7 +14,7 @@ public class GeneratorSqlmap {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 
-		File configFile = new File("/Users/liuzhangsheng/Documents/soft/dev_tool/generator/src/main/resources/generatorConfig.xml");
+		File configFile = new File("D:\\work\\workspace-idea\\code-help-tools\\original-generator\\src\\main\\resources\\generatorConfig.xml");
 
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = cp.parseConfiguration(configFile);

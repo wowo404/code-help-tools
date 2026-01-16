@@ -22,30 +22,40 @@ public class GenerateController {
 
         sb.append("import ").append(entityPackage).append(".").append(entityName + entitySuffix).append(";\r\n\r\n");
         sb.append("import ").append(serviceInterfacePackage).append(".").append(entityName).append("Service;\r\n");
-        sb.append("import com.minxun.common.utils.R;\r\n");
-        sb.append("import com.minxun.modules.sys.controller.AbstractController;\r\n");
+        sb.append("import lombok.RequiredArgsConstructor;\r\n");
+        sb.append("import me.zhengjie.base.Response;\r\n");
+//        sb.append("import com.minxun.modules.sys.controller.AbstractController;\r\n");
         sb.append("import org.springframework.web.bind.annotation.*;\r\n");
-        sb.append("import org.springframework.beans.factory.annotation.Autowired;\r\n");
+//        sb.append("import org.springframework.beans.factory.annotation.Autowired;\r\n");
         sb.append("\r\n");
 
         sb.append("/**\r\n");
         sb.append(" * " + tableInfo.getTableComment() + "\r\n");
         sb.append(" */\r\n");
+        sb.append("@RequiredArgsConstructor\r\n");
         sb.append("@RestController\r\n");
         sb.append("@RequestMapping(\"" + requestMappingPrefix + "/" + initial(entityName) + "\")\r\n");
-        sb.append("public class ").append(entityName).append("Controller extends AbstractController {\r\n");
+        sb.append("public class ").append(entityName).append("Controller {\r\n");
         sb.append("\r\n");
-        sb.append("\t@Autowired");
+        sb.append("\tprivate final " + entityName + "Service " + initial(entityName) + "Service;\r\n");
         sb.append("\r\n");
-        sb.append("\tprivate " + entityName + "Service " + initial(entityName) + "Service;\r\n");
+        //--------分页列表
+        sb.append("\t/**\r\n");
+        sb.append("\t * 分页列表\r\n");
+        sb.append("\t */\r\n");
+        sb.append("\t@GetMapping(\"pageList\")\r\n");
+        sb.append("\tpublic Response<Long> pageList() {\r\n");
+        sb.append("\t\treturn Response.success();\r\n");
+        sb.append("\t}\r\n");
         sb.append("\r\n");
+        //--------
         //--------列表
         sb.append("\t/**\r\n");
         sb.append("\t * 列表\r\n");
         sb.append("\t */\r\n");
-        sb.append("\t@PostMapping(\"list\")\r\n");
-        sb.append("\tpublic R<Long> list() {\r\n");
-        sb.append("\t\treturn R.ok();\r\n");
+        sb.append("\t@GetMapping(\"list\")\r\n");
+        sb.append("\tpublic Response<Long> list() {\r\n");
+        sb.append("\t\treturn Response.success();\r\n");
         sb.append("\t}\r\n");
         sb.append("\r\n");
         //--------
@@ -53,9 +63,9 @@ public class GenerateController {
         sb.append("\t/**\r\n");
         sb.append("\t * 详情\r\n");
         sb.append("\t */\r\n");
-        sb.append("\t@PostMapping(\"info\")\r\n");
-        sb.append("\tpublic R<Long> info() {\r\n");
-        sb.append("\t\treturn R.ok();\r\n");
+        sb.append("\t@GetMapping(\"{id}\")\r\n");
+        sb.append("\tpublic Response<Long> info(@PathVariable Long id) {\r\n");
+        sb.append("\t\treturn Response.success();\r\n");
         sb.append("\t}\r\n");
         sb.append("\r\n");
         //--------
@@ -64,8 +74,8 @@ public class GenerateController {
         sb.append("\t * 新增\r\n");
         sb.append("\t */\r\n");
         sb.append("\t@PostMapping(\"add\")\r\n");
-        sb.append("\tpublic R<Long> add() {\r\n");
-        sb.append("\t\treturn R.ok();\r\n");
+        sb.append("\tpublic Response<Long> add() {\r\n");
+        sb.append("\t\treturn Response.success();\r\n");
         sb.append("\t}\r\n");
         sb.append("\r\n");
         //--------
@@ -73,9 +83,9 @@ public class GenerateController {
         sb.append("\t/**\r\n");
         sb.append("\t * 编辑\r\n");
         sb.append("\t */\r\n");
-        sb.append("\t@PostMapping(\"edit\")\r\n");
-        sb.append("\tpublic R<Void> edit() {\r\n");
-        sb.append("\t\treturn R.ok();\r\n");
+        sb.append("\t@PutMapping(\"edit\")\r\n");
+        sb.append("\tpublic Response<Void> edit() {\r\n");
+        sb.append("\t\treturn Response.success();\r\n");
         sb.append("\t}\r\n");
         sb.append("\r\n");
         //--------
@@ -84,8 +94,8 @@ public class GenerateController {
         sb.append("\t * 删除\r\n");
         sb.append("\t */\r\n");
         sb.append("\t@DeleteMapping(\"/{ids}\")\r\n");
-        sb.append("\tpublic R<Void> delete(@PathVariable Long[] ids) {\r\n");
-        sb.append("\t\treturn R.ok();\r\n");
+        sb.append("\tpublic Response<Void> delete(@PathVariable Long[] ids) {\r\n");
+        sb.append("\t\treturn Response.success();\r\n");
         sb.append("\t}\r\n");
         //----------
         sb.append("}\r\n");

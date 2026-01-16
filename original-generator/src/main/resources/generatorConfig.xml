@@ -7,10 +7,10 @@
     <!--generator.xml中各节点的详细解释https://gitee.com/free/Mybatis_Utils/blob/master/MybatisGeneator/MybatisGeneator.md-->
 	<context id="testTables" targetRuntime="MyBatis3" defaultModelType="flat">
         <!-- 通用mapper插件 -->
-        <!--<plugin type="tk.mybatis.mapper.generator.MapperPlugin">-->
-            <!--&lt;!&ndash; 此处的 MyMapper注意一定不能被扫描到&ndash;&gt;-->
-            <!--<property name="mappers" value="com.softwareloop.mybatis.generator.plugins.MyMapper"/>-->
-        <!--</plugin>-->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <!-- 此处的 MyMapper注意一定不能被扫描到-->
+            <property name="mappers" value="com.softwareloop.mybatis.generator.plugins.MyMapper"/>
+        </plugin>
 		<plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin"/>
 		<!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
 			<property name="searchString" value="Example$" />
@@ -26,8 +26,8 @@
 						userId="dev_root_user" password="mp#U0dXnOQx%#">
 		</jdbcConnection>-->
 		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-						connectionURL="jdbc:mysql://rm-uf606qe6pn3w0sde14o.mysql.rds.aliyuncs.com/init-tnjc-db?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;tinyInt1isBit=false&amp;useSSL=false"
-						userId="dev_root_user" password="mp#U0dXnOQx%#">
+						connectionURL="jdbc:mysql://47.99.217.240:3306/springboot?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;tinyInt1isBit=false&amp;useSSL=false"
+						userId="springboot" password="baiduYUN@123">
             <property name="useInformationSchema" value="true"/>
             <!--当指定schema失效的时候，加此property-->
             <property name="nullCatalogMeansCurrent" value="true" />
@@ -61,8 +61,8 @@
 		</javaTypeResolver>
 
 		<!-- targetProject:生成PO类的位置 -->
-		<javaModelGenerator targetPackage="com.jc.domain.certp2p"
-			targetProject="src/main/java">
+		<javaModelGenerator targetPackage="com.operation.model.po"
+			targetProject="D:\work\workspace-idea\code-help-tools\original-generator\src\main\java">
             <!--  for MyBatis3/MyBatis3Simple
             自动为每一个生成的类创建一个构造方法，构造方法包含了所有的field；而不是使用setter；
             -->
@@ -85,19 +85,19 @@
 		</javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
 		<sqlMapGenerator targetPackage="mapper"
-			targetProject="src/main/resources">
+			targetProject="D:\work\workspace-idea\code-help-tools\original-generator\src\main\resources">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		<!-- targetPackage：mapper接口生成的位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.jc.mapper.certp2p"
-			targetProject="src/main/java">
+			targetPackage="com.operation.dao.mapper"
+			targetProject="D:\work\workspace-idea\code-help-tools\original-generator\src\main\java">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- 指定数据库表 -->
-        <table schema="init-tnjc-db" tableName="tn_certp2p_detail" domainObjectName="CertP2PDetail" enableCountByExample="true">
+        <table schema="springboot" tableName="schedule_config" domainObjectName="ScheduleConfig" enableCountByExample="true">
             <generatedKey column="id" sqlStatement="Mysql" />
             <!--<columnOverride column="response_json" javaType="java.lang.String" jdbcType="JSON"/>-->
             <!--<domainObjectRenamingRule searchString="^Data" replaceString="" />-->

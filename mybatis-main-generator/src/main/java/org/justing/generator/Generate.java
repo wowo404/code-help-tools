@@ -34,8 +34,8 @@ public class Generate {
                                 String tableName, String entityName, String basePackage,
                                 String entityPath, String mapperPath, String servicePath, String serviceInterfacePath,
                                 String controllerPath, String entitySuffix, String requestMappingPrefix) throws Exception {
-        String entityPackage = basePackage + ".entity";
-        String mapperPackage = basePackage + ".dao";
+        String entityPackage = basePackage + ".domain";
+        String mapperPackage = basePackage + ".mapper";
         String servicePackage = basePackage + ".service.impl";
         String serviceInterfacePackage = basePackage + ".service";
         String controllerPackage = basePackage + ".controller";
@@ -58,30 +58,34 @@ public class Generate {
 
 
     public static void main(String[] args) throws Exception {
-        String basePackage = "com.minxun.modules.api";
+        String basePackage = "me.zhengjie";
         String basePath = "";
         String property = System.getProperty("user.name");
-        if ("admin".equals(property)) {
-            basePath = "E:/work/bashen/code/";
+        if ("liuzhangsheng".equals(property)) {
+            basePath = "D:\\work\\projects\\chenwenbi\\code\\eladmin\\";
         } else {
             return;
         }
-        String entitySuffix = "Entity";//po类的后缀
-        String requestMappingPrefix = "api";//requestMapping的前缀，即/api/**
-        String entityPath = basePath + "factory-center/src/main/java/com/minxun/modules/api/entity/";
-        String mapperPath = basePath + "factory-center/src/main/java/com/minxun/modules/api/dao/";
-        String servicePath = basePath + "factory-center/src/main/java/com/minxun/modules/api/service/impl/";
-        String serviceInterfacePath = basePath + "factory-center/src/main/java/com/minxun/modules/api/service/";
-        String controllerPath = basePath + "factory-center/src/main/java/com/minxun/modules/api/controller/";
+        String entitySuffix = "";//po类的后缀
+        String requestMappingPrefix = "/app/api";//requestMapping的前缀，即/api/**
+        String entityPath = basePath + "eladmin-common-service/src/main/java/me/zhengjie/domain/";
+        String mapperPath = basePath + "eladmin-common-service/src/main/java/me/zhengjie/mapper/";
+        String servicePath = basePath + "eladmin-common-service/src/main/java/me/zhengjie/service/impl/";
+        String serviceInterfacePath = basePath + "eladmin-common-service/src/main/java/me/zhengjie/service/";
+        String controllerPath = basePath + "eladmin-app/src/main/java/me/zhengjie/modules/user/rest/";
         Map<String, String> names = new HashMap<>();
 //        names.put("bis_image", "BisImage");
 //        names.put("bis_recharge_config", "BisRechargeConfig");
 //        names.put("bis_recharge_record", "BisRechargeRecord");
 //        names.put("bis_special_product", "BisSpecialProduct");
 //        names.put("bis_special_product_category", "BisSpecialProductCategory");
-        names.put("bis_special_product_get_record", "BisSpecialProductGetRecord");
+//        names.put("ex_user_points_flow", "ExUserPointsFlow");
+//        names.put("pay_order", "PayOrder");
+//        names.put("pay_order_points", "PayOrderPoints");
+//        names.put("pay_order_channel", "PayOrderChannel");
+        names.put("ex_identity", "Identity");
         for (Map.Entry<String, String> entry : names.entrySet()) {
-            generate("172.16.5.201", "3306", "factory-center", "root", "mailink",
+            generate("118.178.142.156", "3306", "eladmin", "root", "88GteF34iM2H8g01x",
                     entry.getKey(), entry.getValue(), basePackage, entityPath, mapperPath, servicePath, serviceInterfacePath,
                     controllerPath, entitySuffix, requestMappingPrefix);
         }
@@ -91,7 +95,7 @@ public class Generate {
         TableInfo tableInfo = new TableInfo();
         tableInfo.setTableName(tableName);
         Class.forName("com.mysql.cj.jdbc.Driver");
-        String url = String.format("jdbc:mysql://%s:%s/%s?serverTimezone=UTC&useSSL=false", host, port, database);
+        String url = String.format("jdbc:mysql://%s:%s/%s?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true", host, port, database);
         Connection conn = DriverManager.getConnection(url, username, password);
         String tableSql = "select TABLE_COMMENT from information_schema.tables where table_name = '" + tableName + "'";
         PreparedStatement preparedStatement = conn.prepareStatement(tableSql);

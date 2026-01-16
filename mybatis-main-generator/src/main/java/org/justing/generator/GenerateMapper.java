@@ -23,11 +23,11 @@ public class GenerateMapper {
         sb.append("import org.apache.ibatis.annotations.Mapper;\r\n\r\n");
 
         sb.append("@Mapper\r\n");
-        sb.append("public interface ").append(entityName).append("Dao extends BaseMapper<" + entityName + entitySuffix + "> {\r\n");
+        sb.append("public interface ").append(entityName).append("Mapper extends BaseMapper<" + entityName + entitySuffix + "> {\r\n");
         sb.append("}\r\n");
         String content = sb.toString();
         System.out.println(content);
-        FileWriter fw = new FileWriter(mapperPath + entityName + "Dao.java");
+        FileWriter fw = new FileWriter(mapperPath + entityName + "Mapper.java");
         PrintWriter pw = new PrintWriter(fw);
         pw.println(content);
         pw.flush();
